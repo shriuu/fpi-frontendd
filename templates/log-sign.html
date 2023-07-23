@@ -23,6 +23,7 @@
             background-size: cover;
             background-position: center;
             height: 100dvh;
+            
         }
 
         /*nav */
@@ -72,6 +73,9 @@
             font-weight: 600;
             letter-spacing: .7px;
         }
+        section{
+            padding-top: 20px;
+        }
 
         li a:hover {
             color: #91b2ff;
@@ -98,10 +102,90 @@
             color: #152939;
             transition: all .3s ease-in-out;
         }
+        .login-box {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            margin: 20px auto;
+            transform: translate(-50%, -55%);
+            background: transparent;
+            backdrop-filter: blur(3px);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+
+        .login-box p:first-child {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #2f002c;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #2f002c;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #2f002c;
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #2f002c;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #2f002c;
+            font-size: 12px;
+        }
+    
+
+        .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 3px
+        }
+
+        .login-box a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 24px 0;
+        }
 
     </style>
 </head>
-<body style="background-image: url('https://miro.medium.com/max/1200/0*z2sRtp_yqUS4Yuno');"></body>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWLqOI76JavsjPMGyAJtwaje9c5zwYU3DTsA&usqp=CAU');"></body>
 
 <body>
 
@@ -115,8 +199,8 @@
             </div>
             <ul>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
             <div class="button">
                 <a href="/register">
@@ -127,7 +211,39 @@
                 </a>
             </div>
         </nav>
-    </header>
+    </header><br/>
+<div>
+    <section>
+        <div class="login-box">
+            <p style="color: #fff;">signup</p>
+            <form action="/registerform" method="post">
+                <div class="user-box">
+                    <input required="true" name="name" style="color: #fff;" type="name">
+                    <label style="color: azure;">name</label>
+                </div>
+                <div class="user-box">
+                    <input required="true" name="Emailid" style="color: #fff;" type="email">
+                    <label style="color: azure;">Email</label>
+                </div>
+                <div class="user-box">
+                    <input required="true" name="phone" style="color: #fff ;" type="mobile">
+                    <label style="color: aliceblue;">mobile</label>
+                </div>
+                <div class="user-box">
+                    <input required="true" name="password" style="color: #fff;" type="password">
+                    <label style="color: aliceblue;">Password</label>
+                </div>
+                <div class="user-box">
+                    <input required="true" name="reenterpassword" style="color: #fff ;" type="password">
+                    <label style="color: aliceblue;">Reenterpassword</label>
+                </div>
+                <input type="submit" value="Register" /> <br/>
+                <span style="color:green">{{res}}</span>
+                <span style="color:red">{{err}}</span>
+            </form>
+        </div>
+    </section>
+</div>
 </body>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');

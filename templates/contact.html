@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log-in Page</title>
+    <title>SignUp</title>
+    
     <style>
         * {
             margin: 0;
@@ -19,7 +20,7 @@
             height: 100vh;
         }
 
-        .login-box {
+        .contact-box {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -34,7 +35,7 @@
             border-radius: 10px;
         }
 
-        .login-box p:first-child {
+        .contact-box p:first-child {
             margin: 0 0 30px;
             padding: 0;
             color: #2f002c;
@@ -44,11 +45,11 @@
             letter-spacing: 1px;
         }
 
-        .login-box .user-box {
+        contact-boxx .user-box {
             position: relative;
         }
 
-        .login-box .user-box input {
+        .contact-box.user-box input {
             width: 100%;
             padding: 10px 0;
             font-size: 16px;
@@ -60,7 +61,7 @@
             background: transparent;
         }
 
-        .login-box .user-box label {
+        .contact-box.user-box label {
             position: absolute;
             top: 0;
             left: 0;
@@ -71,15 +72,15 @@
             transition: .5s;
         }
 
-        .login-box .user-box input:focus~label,
-        .login-box .user-box input:valid~label {
+        .contact-box.user-box input:focus~label,
+        .contact-box.user-box input:valid~label {
             top: -20px;
             left: 0;
             color: #2f002c;
             font-size: 12px;
         }
 
-        .login-box form a {
+        .contact-box form a {
             position: relative;
             display: inline-block;
             padding: 10px 20px;
@@ -94,7 +95,7 @@
             letter-spacing: 3px
         }
 
-        .login-box a:hover {
+        .contact-box a:hover {
             transform: scale(1.1);
             box-shadow: 0 0 24px 0;
         }
@@ -150,6 +151,21 @@
             transition: all .3s ease-in-out
         }
         
+        .button {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .button button {
+            font-weight: 500;
+            color: #fff;
+            border: 1px solid #fff;
+            background-color: transparent;
+            padding: .5rem 1rem;
+            border-radius: 20%;
+            cursor: pointer;
+        }
+
         .button button:hover {
             background-color: #fff;
             color: #152939;
@@ -159,39 +175,42 @@
 </head>
 
 <body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWLqOI76JavsjPMGyAJtwaje9c5zwYU3DTsA&usqp=CAU');">
-    
     <header>
         <nav>
             <div class="logo">
-                <a href="#" style="color: azure;">Fake Product Identification</a>
+                <a href="#" style="color: #fff;">Fake Product Identification</a>
             </div>
             <ul>
-                <li><a href="/register" style="color: azure;">Home</a></li>
-                <li><a href="/about" style="color: azure;">About</a></li>
-                <li><a href="#" style="color: azure;">Contact</a></li>
+                <li><a href="/" style="color: #fff;">Home</a></li>
+                <li><a href="/about" style="color: #fff;">About</a></li>
+                <li><a href="/contact" style="color: #fff;">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section>
-        <div class="login-box">
-            <p style="color: azure;">Login</p>
-            <form action="/loginform" method="post">
+        <div class="contact-box">
+            <p style="color: #fff;">CONTACT</p>
+            <form action="/" method="post">
                 <div class="user-box">
-                    <input required="true" name="username" style="color: #fff ;" type="email">
-                    <label style="color: aliceblue;">Email</label>
+                    <input required="true" name="name" style="color: #fff;" type="name">
+                    <label style="color: azure;">name</label>
                 </div>
                 <div class="user-box">
-                    <input required="true" name="password" style="color: #fff;" type="password">
-                    <label style="color: aliceblue;">Password</label>
+                    <input required="true" name="Emailid" style="color: #fff;" type="email">
+                    <label style="color: azure;">Email</label>
                 </div>
-                <input type="submit" value="Login"> <br/>
+                <div class="user-box">
+                    <input required="true" name="phone" style="color: #fff ;" type="mobile">
+                    <label style="color: aliceblue;">mobile</label>
+                </div>
+                
+                <input type="submit" value="contact" /> <br/>
                 <span style="color:green">{{res}}</span>
                 <span style="color:red">{{err}}</span>
             </form>
         </div>
     </section>
-    
 
 
 </body>

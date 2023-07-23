@@ -8,10 +8,17 @@ frontend.secret_key='litam'
 @frontend.route('/')
 def homepage():
     return render_template('log-sign.html')
+@frontend.route('/about')
+def about():
+    return render_template('about.html')
 
 @frontend.route('/register')
 def register():
     return render_template('signup.html')
+
+@frontend.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @frontend.route('/login')
 def login():
@@ -42,6 +49,7 @@ def qrcode():
     return render_template('qrcode.html')
 
 
+
 @frontend.route('/registerform',methods=['post'])
 def registerform():
     name=request.form['name']
@@ -54,9 +62,9 @@ def registerform():
     k=url.urlopen(apirequest).read()
     print(k)
     k=k.decode('utf-8')
-    if(k=='account exist'):
+    if(k==' exist'):
         return render_template('signup.html',err='Account Existed')
-    return redirect('/login')
+    return redirect('/')
 
 @frontend.route('/loginform',methods=['post'])
 def loginform():
